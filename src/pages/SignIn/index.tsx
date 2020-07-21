@@ -21,7 +21,7 @@ const SignIn: React.FC = () => (
             name="password"
             icon={FiLock}
             placeholder="Senha"
-            type="text"
+            type="password"
           />
 
           <Button type="submit">Entrar</Button>
