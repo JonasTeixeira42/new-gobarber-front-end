@@ -22,7 +22,7 @@ const SignUp: React.FC = () => {
         name: Yup.string().required('Nome obrigatório'),
         email: Yup.string()
           .required('E-mail obrigatório')
-          .email('E-mail é obrigatório'),
+          .email('Digite um e-mail válido'),
         password: Yup.string().min(6, 'Minímo 6 dígitos'),
       });
 
