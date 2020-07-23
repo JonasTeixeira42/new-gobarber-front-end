@@ -35,7 +35,7 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
   useEffect(() => {
     registerField({
       name: fieldName,
-      ref: inputRef,
+      ref: inputRef.current,
       path: 'value',
     });
   }, [fieldName, registerField]);
