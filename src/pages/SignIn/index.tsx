@@ -58,35 +58,42 @@ const SignIn: React.FC = () => {
         });
       }
     },
-    [signIn]
+    [signIn, addToast]
   );
 
   return (
     <>
       <S.Container>
         <S.Content>
-          <img src={logoImg} alt="logo" />
+          <S.AnimationContainer>
+            <img src={logoImg} alt="logo" />
 
-          <Form ref={formRef} onSubmit={handleSubmit}>
-            <h1>Faça seu logon</h1>
+            <Form ref={formRef} onSubmit={handleSubmit}>
+              <h1>Faça seu logon</h1>
 
-            <Input name="email" icon={FiMail} placeholder="Email" type="text" />
-            <Input
-              name="password"
-              icon={FiLock}
-              placeholder="Senha"
-              type="password"
-            />
+              <Input
+                name="email"
+                icon={FiMail}
+                placeholder="Email"
+                type="text"
+              />
+              <Input
+                name="password"
+                icon={FiLock}
+                placeholder="Senha"
+                type="password"
+              />
 
-            <Button type="submit">Entrar</Button>
+              <Button type="submit">Entrar</Button>
 
-            <a href="ç">Esqueci minha senha</a>
-          </Form>
+              <a href="ç">Esqueci minha senha</a>
+            </Form>
 
-          <Link to="/signup">
-            <FiLogIn />
-            Criar conta
-          </Link>
+            <Link to="/signup">
+              <FiLogIn />
+              Criar conta
+            </Link>
+          </S.AnimationContainer>
         </S.Content>
         <S.Background />
       </S.Container>
