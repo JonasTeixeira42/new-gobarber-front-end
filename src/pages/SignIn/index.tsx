@@ -61,7 +61,7 @@ const SignIn: React.FC = () => {
         });
       }
     },
-    [signIn, addToast]
+    [signIn, addToast, history]
   );
 
   return (
@@ -89,7 +89,7 @@ const SignIn: React.FC = () => {
 
               <Button type="submit">Entrar</Button>
 
-              <a href="ç">Esqueci minha senha</a>
+              <Link to="forgot-password">Esqueci minha senha</Link>
             </Form>
 
             <Link to="/signup">
