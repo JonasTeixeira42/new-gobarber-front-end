@@ -12,11 +12,17 @@ import { useField } from '@unform/core';
 import * as S from './styles';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  containerStyle?: object;
   name: string;
   icon?: React.ComponentType<IconBaseProps>;
 }
 
-const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
+const Input: React.FC<InputProps> = ({
+  name,
+  containerStyle,
+  icon: Icon,
+  ...rest
+}) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const { fieldName, defaultValue, error, registerField } = useField(name);
   const [isFocused, setIsFocused] = useState(false);
@@ -41,7 +47,12 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
   }, [fieldName, registerField]);
 
   return (
-    <S.Container isFilled={isFilled} isErrored={!!error} isFocused={isFocused}>
+    <S.Container
+      style={containerStyle}
+      isFilled={isFilled}
+      isErrored={!!error}
+      isFocused={isFocused}
+    >
       {Icon && <Icon size={20} />}
       <input
         onFocus={handleInputFocused}
